@@ -1,0 +1,52 @@
+.ask {
+    font-size:20px;
+    margin: 10px;
+    color: #0c0c0c;
+}
+
+.res {
+    background: #F5F5F5;
+    font-size:20px;
+    margin: 30px 0;
+    color: #0c0c0c;
+    padding: 20px;
+    button {
+        margin:10px 0;
+    }
+}
+
+ul {
+    li {
+        list-style-type: none;
+    }
+}
+
+.btn {
+    padding: 0 10px;
+    margin: 10px;
+    background: #0c0c0c;
+    color:#fff;
+    height:30px;
+    line-height:30px;
+    border:none;
+    &--great {
+        background-color: forestgreen
+    }
+    &--medium {
+        background-color: chocolate
+    }
+    &--bad {
+        background-color: darkred;
+    }
+    &.disabled {
+        background-color: grey;
+    }
+}
+
+.hightLight {
+    color:crimson;
+}
+
+.wrapperScore {
+    margin:20px;
+}
