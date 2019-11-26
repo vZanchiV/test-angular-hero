@@ -1,9 +1,10 @@
 var express = require('express')
-var path = require('path')
-var serveStatic = require('serve-static')
 
-var app = express()
-app.use(serveStatic(path.join('angular', 'dist')))
-var port = 5000
 
-app.listen(port)
+const app  = express();
+app.get('/', function(request,reponse) {
+    // eslint-disable-next-line no-undef
+    reponse.sendFile(__dirname + "/public/index.html");
+    app.use('/dist',express.static('dist'))
+})
+app.listen(8080);
