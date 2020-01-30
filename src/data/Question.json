@@ -1,0 +1,173 @@
+[
+  {
+    "ask": {
+      "libelle": "Quel Directive on utilise  pour passer de la data d'un composant parent à un enfant ?"
+    },
+    "res": {
+      "libelle": "Tu dois utiliser la directive Input() ou @Attribute si la valeur ne change pas"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Quels sont les étapes pour communiquer d'un composent enfant vers un composent parent"
+    },
+    "res": {
+      "libelle": [
+        "Déclarer la sortie dans le décorateur 'Output'",
+        "Créer un EventEmitter",
+        "Emettre un événement dans une méthode 'emit()",
+        "Ecouter l'événement sur le composant parent"
+      ]
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Quel est la premiere phase (methode) du cycle de vie appelé"
+    },
+    "res": {
+      "libelle": "ngOnChanges sera la première appelée quand la valeur d’une propriété bindée est modifiée et ngOnInit sera appelée une seule fois après le premier changement"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Comment communiquer entre deux composants enfant"
+    },
+    "res": {
+      "libelle": "Tu peux utiliser les services avec l'injection de dépendance"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Quel Module utilise t'on pour Obtenir des données d'une API"
+    },
+    "res": {
+      "libelle": "Le Module Http propose un service nommé HttpClient. et le module HttpClientModule à inject dans  le module racine"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Que retourne cette requette 'http.get<Array<RaceModel>>(`${baseUrl}/api/races`)'"
+    },
+    "res": {
+      "libelle": "Cela retourne un Observable, et tu peux donc t’y abonner pour obtenir la réponse."
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Peux tu m'expliquer le concept de programmation réactive"
+    },
+    "res": {
+      "libelle": "C'est une façon de construire une application avec des événements, et d’y réagir.Dans la programmation réactive, tout est un flux. Un flux est une séquence ordonnée d’événements. "
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Que vaut i ?",
+      "img": "ask8"
+    },
+    "res": {
+      "libelle": "6, 8, 10"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "A quoi sert les Guards au niveau du routeur"
+    },
+    "res": {
+      "libelle": "Empecher la navigation vers une route suivant les droit d'un user, CanActivate,CanLoad"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Quel sont les 2 manières de gérer les formulaire ?"
+    },
+    "res": {
+      "libelle": "Piloté par le template et Piloté par le code"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Comment Spécifier qu'un champ est requis"
+    },
+    "res": {
+      "libelle": "On va utiliser Validator => Validator.required"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "A quoi sert la directive ViewChild ?"
+    },
+    "res": {
+      "libelle": "Obtenir une référence vers un élément  du DOM le code de notre composant",
+      "img": "ask12"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "A quoi sert le décorateur HostListener"
+    },
+    "res": {
+      "libelle": "Permet de réagir à un événement comme par example le dblclick => @HostListener('dblclick')"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Quel strategie de detection de changement peux t'aider à optimiser les performances de ton applications"
+    },
+    "res": {
+      "libelle": [
+        "ChangeDetectionStrategy.OnPush => détection de changements sur ce composant que si la référence de l'input est modifiée",
+        "le composant sera vérifié que lorsque l’un des inputs du composant a changé (pour être plus précis, lorsque la référence d’une input a changé)",
+        "lorsqu’un gestionnaire d’événement du composant a été déclenché."
+      ]
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Quel Pipe d'angular permet d'afficher des données obtenues de manières asynchrone "
+    },
+    "res": {
+      "libelle": "Un pipe async retourne une chaîne de caractères vide jusqu’à ce que les données deviennent disponibles "
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Quel est le role d'une directive dans angular "
+    },
+    "res": {
+      "libelle": "les directives permettent attacher du comportement aux éléments du DOM."
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Angular fonctione en TypeScript, peux tu me cité tous les types "
+    },
+    "res": {
+      "libelle": "Boolean, Number, String, Array, Tuple, Enum, Any,Void"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Quel moyen met à notre disposition angular pour analyser chaque demande  et réponse http "
+    },
+    "res": {
+      "libelle": "Un Intercepteur HTTP"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Comment peut on enlever ou ajouter dynamiquement des classes sur un élément du DOM"
+    },
+    "res": {
+      "libelle": "NgClass"
+    }
+  },
+  {
+    "ask": {
+      "libelle": "Qu est ce que le AOT (Ahead-Of-Time) Compilation"
+    },
+    "res": {
+      "libelle": "C'est un mode de compilation qui fait gagner beaucoup de temps de rendu car tu écris toujours du TypeScript et du HTML, tu compiles le HTML en TypeScript, puis tout le code TypeScript en JavaScript, puis tu envoies tout le code JS à tes utilisateurs"
+    }
+  }
+]
