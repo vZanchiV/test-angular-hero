@@ -1,13 +1,15 @@
 <template>
-    <div>
-        <h2>Question 14</h2>
-        <ask  :ask='dataAsk' />
-        <res :resList='dataRes' />
-        <score /> 
-        <div style="text-align:center; ">
-            <router-link to="/question15">Question suivante</router-link> 
-        </div>
+  <div>
+    <h2>Question 14</h2>
+    <ask :ask="dataAsk" />
+    <res :res-list="dataRes" />
+    <score /> 
+    <div style="text-align:center; ">
+      <router-link to="/question15">
+        Question suivante
+      </router-link> 
     </div>
+  </div>
 </template>
 
 <script>

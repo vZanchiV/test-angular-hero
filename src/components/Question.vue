@@ -1,7 +1,9 @@
 <template>
-    <div>
-        <p class="ask">{{ ask }}</p>
-    </div>
+  <div>
+    <p class="ask">
+      {{ ask }}
+    </p>
+  </div>
 </template>
 
 <script>

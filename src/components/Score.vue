@@ -1,10 +1,38 @@
 <template>
-    <div class="wrapperScore">
-        <button :disabled="stateRes"  :class="{ disabled: stateRes }" class="btn btn--great" @click="updateScore(2)">Bonne réponse</button>
-        <button  :disabled="stateRes" :class="{ disabled: stateRes }" class="btn btn--medium" @click="updateScore(1)">Bonne réponse mais incomplete</button>
-        <button :disabled="stateRes"  :class="{ disabled: stateRes }" class="btn btn--bad" @click="updateScoreFalse(1)">Mauvaise réponse</button>
-        <button :disabled="stateRes"  :class="{ disabled: stateRes }" class="btn btn--bad" @click="updateScoreNoRes(1)">Pas de réponse</button>
-    </div>
+  <div class="wrapperScore">
+    <button
+      :disabled="stateRes"
+      :class="{ disabled: stateRes }"
+      class="btn btn--great"
+      @click="updateScore(2)"
+    >
+      Bonne réponse
+    </button>
+    <button
+      :disabled="stateRes"
+      :class="{ disabled: stateRes }"
+      class="btn btn--medium"
+      @click="updateScore(1)"
+    >
+      Bonne réponse mais incomplete
+    </button>
+    <button
+      :disabled="stateRes"
+      :class="{ disabled: stateRes }"
+      class="btn btn--bad"
+      @click="updateScoreFalse(1)"
+    >
+      Mauvaise réponse
+    </button>
+    <button
+      :disabled="stateRes"
+      :class="{ disabled: stateRes }"
+      class="btn btn--bad"
+      @click="updateScoreNoRes(1)"
+    >
+      Pas de réponse
+    </button>
+  </div>
 </template>
 
 <script>
