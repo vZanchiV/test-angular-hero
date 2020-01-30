@@ -7,22 +7,17 @@
       v-if="ToggleOpen"
       class="res__content"
     >
-      <p v-if="res">
-        {{ res }}
+      <p v-if="!isList">
+        {{ responses }}
       </p>
-      <ul v-if="resList">
+      <ul v-if="isList">
         <li
-          v-for="(res,index) in resList"
+          v-for="(response,index) in responses"
           :key="index"
         >
-          {{ res }}
+          {{ response }}
         </li>
       </ul>
-      <img
-        v-if="img"
-        :src="urlImage"
-        alt=""
-      >
     </div>
   </div>
 </template>
@@ -30,19 +25,19 @@
 <script>
   export default {
     props: {
-      res: {
-        type: String
-      },
-      resList: {
-        type: Array
-      },
-      urlImage: {
-        type: String
+      responses: {
+        type: [String, Array],
+        required: true
       }
     },
     data () {
       return {
         ToggleOpen: false
+      }
+    },
+    computed: {
+      isList: function () {
+        return typeof this.responses !== 'string'
       }
     },
     methods: {
