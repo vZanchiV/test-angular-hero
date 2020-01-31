@@ -1,6 +1,6 @@
 <template>
   <div class="res">
-    <button @click="toggle">
+    <button @click="toggle" class="btn btn--response">
       Voir la réponse :
     </button>
     <div

@@ -79,10 +79,13 @@
   },
   {
     "ask": {
-      "libelle": "Quel sont les 2 manières de gérer les formulaire ?"
+      "libelle": "Quels sont les 2 manières de gérer les formulaires ?"
     },
     "res": {
-      "libelle": "Piloté par le template et Piloté par le code"
+      "libelle": [
+        "Piloté par le template",
+        "Piloté par le code"
+      ]
     }
   },
   {

@@ -27,7 +27,7 @@
     <button
       :disabled="stateRes"
       :class="{ disabled: stateRes }"
-      class="btn btn--bad"
+      class="btn btn--none"
       @click="updateScoreNoRes(1)"
     >
       Pas de réponse
@@ -48,7 +48,7 @@ export default {
             'upgrateScore',
             'upgrateNbBadRes',
             'upgrateNbNoRes',
-          'nextQuestion'
+            'nextQuestion'
         ]),
         updateScore(value) {
             this.upgrateScore(value)
