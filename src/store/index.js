@@ -9,15 +9,16 @@ export default new Vuex.Store({
     score: 0,
     nbrBadRes: 0,
     nbrNoRes: 0,
-    currentQuestion: 1,
+    numeroQuestion: 1,
     questions: datas
   },
   getters: {
     scoreTotal: state => state.score,
     badResponse: state => state.nbrBadRes,
     noResponse: state => state.nbrNoRes,
-    getCurrentQuestion: state => state.currentQuestion,
-    getQuestion: state => state.questions[state.currentQuestion - 1]
+    getNumQuestion: state => state.numeroQuestion,
+    getQuestion: state => state.questions[state.numeroQuestion - 1],
+    getQuestion2: (state,num) => state.questions[num - 1]
   },
   mutations: {
     UPGRADE_SCORE: (state, payload) => {
@@ -30,7 +31,7 @@ export default new Vuex.Store({
       state.nbrNoRes = state.nbrNoRes + payload
     },
     NEXT_QUESTION: (state) => {
-      state.currentQuestion += 1
+      state.numeroQuestion += 1
     }
   },
   actions: {

@@ -1,22 +1,23 @@
 <template>
   <div>
-    <h2>Question {{ getCurrentQuestion }}</h2>
+    <h2 :key="getNumQuestion">Question {{ numero }}</h2>
     <ask
-      :ask="getQuestion.ask"
-      :img="getQuestion.img"
+      :question="questionnaire.ask"
     />
-    <res :responses="getQuestion.res" />
-    <score />
-    <div style="text-align:center; ">
-      <button @click="nextQuestion">
+    <res :responses="questionnaire.res" />
+    <score @resultat="resultat()" />
+    <div
+      v-if="isShow"
+      style="text-align:center;"
+    >
+      <router-link :to="link">
         Question suivante
-      </button>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
   import Question from '../components/Question'
   import Reponse from '../components/Reponse'
   import Score from '../components/Score'
@@ -27,17 +28,24 @@
       res: Reponse,
       score: Score
     },
+    data () {
+      return {
+        isShow: false,
+        questionnaire: this.$store.getters.getQuestion,
+        numero: this.$route.params.num || this.$store.getters.getNumQuestion
+      }
+    },
     computed: {
-      ...mapGetters({
-        getCurrentQuestion:'getCurrentQuestion',
-        getQuestion: 'getQuestion'})
+      link () {
+        return `/questions/${this.numero + 1}`
+      }
+    },
+    mounted () {
+      this.questionnaire = this.$store.getters.getQuestion
     },
     methods: {
-      ...mapActions([
-        'nextQuestion'
-      ]),
-      questionSuivante(){
-        this.nextQuestion();
+      resultat () {
+        this.isShow = true;
       }
     }
   }

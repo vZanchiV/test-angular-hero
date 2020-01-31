@@ -36,33 +36,41 @@
 </template>
 
 <script>
-    import { mapActions } from 'vuex';
-    export default {
-        data() {
-            return {
-                stateRes: false
-            }
+import { mapActions } from 'vuex';
+export default {
+    data() {
+        return {
+            stateRes: false
+        }
+    },
+    methods: {
+        ...mapActions([
+            'upgrateScore',
+            'upgrateNbBadRes',
+            'upgrateNbNoRes',
+          'nextQuestion'
+        ]),
+        updateScore(value) {
+            this.upgrateScore(value)
+            this.stateRes = true;
+          this.responseActivate()
         },
-        methods: {
-            ...mapActions([
-                'upgrateScore',
-                'upgrateNbBadRes',
-                'upgrateNbNoRes'
-            ]),
-            updateScore(value) {
-                this.upgrateScore(value) 
-                this.stateRes = true;
-            },
-            updateScoreFalse(value) {
-                this.upgrateNbBadRes(value) 
-                 this.stateRes = true;
-            },
-            updateScoreNoRes(value){
-                this.upgrateNbNoRes(value) 
-                 this.stateRes = true;
-            }
+        updateScoreFalse(value) {
+            this.upgrateNbBadRes(value)
+             this.stateRes = true;
+          this.responseActivate()
         },
-    }
+        updateScoreNoRes(value){
+            this.upgrateNbNoRes(value)
+             this.stateRes = true;
+          this.responseActivate()
+        },
+        responseActivate(){
+          this.nextQuestion()
+          this.$emit('resultat')
+        }
+    },
+}
 </script>
 
 <style lang="scss" scoped>

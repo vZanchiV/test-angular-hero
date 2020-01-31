@@ -14,8 +14,8 @@ const routes = [
     component: Home
   },
   {
-    path: '/questions',
-    name: 'super',
+    path: '/questions/:num',
+    name: 'Questionaire',
     component: Questionaire
   },
   {

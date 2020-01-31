@@ -8,14 +8,14 @@
       class="res__content"
     >
       <p v-if="!isList">
-        {{ responses }}
+        {{ responses.libelle }}
       </p>
       <ul v-if="isList">
         <li
-          v-for="(response,index) in responses"
+          v-for="(libelle,index) in responses.libelle"
           :key="index"
         >
-          {{ response }}
+          {{ libelle }}
         </li>
       </ul>
     </div>
@@ -26,7 +26,7 @@
   export default {
     props: {
       responses: {
-        type: [String, Array],
+        type: Object,
         required: true
       }
     },
@@ -37,7 +37,7 @@
     },
     computed: {
       isList: function () {
-        return typeof this.responses !== 'string'
+        return Array.isArray(this.responses.libelle)
       }
     },
     methods: {

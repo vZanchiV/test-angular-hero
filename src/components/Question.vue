@@ -1,9 +1,9 @@
 <template>
   <div>
     <p class="ask">
-      {{ ask }}
+      {{ question.libelle }}
     </p>
-    <div v-if="img !== 'img'">
+    <div v-if="question.img">
       <img :src="myImg">
     </div>
   </div>
@@ -12,20 +12,15 @@
 <script>
   export default {
     props: {
-      ask: {
-        type: String,
+      question: {
+        type: Object,
         required: true,
-      },
-      img: {
-        type: String,
-        required: false,
-        default: 'img'
       }
     },
     computed: {
       myImg () {
         const images = require.context('../assets/', false, /\.png$/)
-        return images(`./${this.img}.png`)
+        return images(`./${this.question.img}.png`)
       }
     }
   }
