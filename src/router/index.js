@@ -19,8 +19,8 @@ const routes = [
     component: Questionaire
   },
   {
-    path: '/resultTest',
-    name: 'resultTest',
+    path: '/resultat',
+    name: 'resultat',
     component: ScoreTotal
   },
 

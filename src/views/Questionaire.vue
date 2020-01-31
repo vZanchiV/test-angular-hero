@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 :key="getNumQuestion">Question {{ numero }}</h2>
+    <h2>Question {{ numero }}</h2>
     <ask
       :question="questionnaire.ask"
     />
@@ -10,8 +10,8 @@
       v-if="isShow"
       style="text-align:center;"
     >
-      <router-link :to="link">
-        Question suivante
+      <router-link :to="link" >
+        {{ message }}
       </router-link>
     </div>
   </div>
@@ -32,12 +32,15 @@
       return {
         isShow: false,
         questionnaire: this.$store.getters.getQuestion,
-        numero: this.$route.params.num || this.$store.getters.getNumQuestion
+        numero: this.$store.getters.getNumQuestion
       }
     },
     computed: {
       link () {
-        return `/questions/${this.numero + 1}`
+        return this.$store.getters.numberQuestion === this.numero ? '/resultat' : `/questions/${this.numero + 1}`
+      },
+      message() {
+        return this.$store.getters.numberQuestion === this.numero ? 'Resultat' : 'Question suivante'
       }
     },
     mounted () {

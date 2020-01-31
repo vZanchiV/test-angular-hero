@@ -18,7 +18,7 @@ export default new Vuex.Store({
     noResponse: state => state.nbrNoRes,
     getNumQuestion: state => state.numeroQuestion,
     getQuestion: state => state.questions[state.numeroQuestion - 1],
-    getQuestion2: (state,num) => state.questions[num - 1]
+    numberQuestion: state => state.questions.length
   },
   mutations: {
     UPGRADE_SCORE: (state, payload) => {
